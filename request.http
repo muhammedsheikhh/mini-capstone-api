@@ -1,0 +1,57 @@
+### product index
+GET http://localhost:3000/products
+
+### product create
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Mr fogg",
+  "price": "8",
+  "description": "Vape pen"
+}
+### 
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Esco bar",
+  "image_url":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fblackoutvapors.com%2Fproduct%2Fposh-plus%2F&psig=AOvVaw2AuTpVFIbfkurZW2gcYYj9&ust=1642130594114000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDqpKjjrfUCFQAAAAAdAAAAABAD",
+  "price": "8",
+  "description": "Vape pen"
+}
+
+### product update
+Patch http://localhost:3000/products/2
+Content-Type: application/json
+
+{
+  "name": "Esco bar",
+  "price": "8",
+  "description": "Vape pen"
+}
+
+### product destroy
+delete http://localhost:3000/products/2
+Content-Type: application/json
+
+### product create
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "posh",
+  "price": "8",
+  "description": "Vape pen"
+}
+
+
+### product create
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "posh plus",
+  "price": "8",
+  "description": "Vape pen"
+}
