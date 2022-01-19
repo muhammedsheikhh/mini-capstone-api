@@ -1,19 +1,33 @@
 ### product index
-GET http://localhost:3000/products
+GET http://localhost:3000/supplierinfo
 
 ### product show
-GET http://localhost:3000/products/4
+GET http://localhost:3000/products/5
 
 ### product create
-POST http://localhost:3000/products
+POST http://localhost:3000/images
 Content-Type: application/json
+
+{
+  "url": "https://www.mercedeshoffman.com/inventoryphotos/2603/wdcyc7hj6kx312828/ip/2.jpg?height=400",
+  "product_id": 5
+}
+
+### product create
+POST http://localhost:3000/images
+Content-Type: application/json
+
+{
+  "url": "https://www.mercedeshoffman.com/inventoryphotos/2603/w1k3g4fbxnj333709/ip/3.jpg?height=400",
+  "product_id": 1
+}
 
 ### product update
 Patch http://localhost:3000/products/2
 Content-Type: application/json
 
 ### product destroy
-delete http://localhost:3000/products/2
+delete http://localhost:3000/images/2
 Content-Type: application/json
 
 
