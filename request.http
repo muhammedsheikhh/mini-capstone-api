@@ -1,8 +1,30 @@
+### product create
+POST http://localhost:3000/users
+
+Content-Type: application/json
+
+{
+  "name": "muhammed",
+  "email": "mo@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### product create
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "mo@test.com",
+  "password": "password"
+}
+
 ### product index
-GET http://localhost:3000/supplierinfo
+GET http://localhost:3000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk4MDJ9.m-uK0wbKXR8AAD7ibJFz8sXc7Gf7VzT3HY60TwNijhA
 
 ### product show
-GET http://localhost:3000/products/5
+GET http://localhost:3000/products/1
 
 ### product create
 POST http://localhost:3000/images
@@ -10,7 +32,7 @@ Content-Type: application/json
 
 {
   "url": "https://www.mercedeshoffman.com/inventoryphotos/2603/wdcyc7hj6kx312828/ip/2.jpg?height=400",
-  "product_id": 5
+  "product_id": 30
 }
 
 ### product create
@@ -18,7 +40,7 @@ POST http://localhost:3000/images
 Content-Type: application/json
 
 {
-  "url": "https://www.mercedeshoffman.com/inventoryphotos/2603/w1k3g4fbxnj333709/ip/3.jpg?height=400",
+  "url": "https://www.mercedeshoffman.com/inventoryphotos/2603/w1k3g4fbxnj333709/ip/1.jpg?height=400",
   "product_id": 1
 }
 

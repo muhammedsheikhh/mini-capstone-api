@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_002755) do
+ActiveRecord::Schema.define(version: 2022_01_21_002630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,24 @@ ActiveRecord::Schema.define(version: 2022_01_19_002755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.decimal "subtotal", precision: 12, scale: 2
+    t.decimal "tax", precision: 12, scale: 2
+    t.decimal "total", precision: 12, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 12, scale: 2
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "supplierinfo"
+    t.integer "supplierinfo_id"
   end
 
   create_table "supplierinfos", force: :cascade do |t|
@@ -39,7 +50,10 @@ ActiveRecord::Schema.define(version: 2022_01_19_002755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "suppliers", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

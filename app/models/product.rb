@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   #def supplier
   # Supplierinfo.find_by(id: supplierinfo)
   #end
-  belongs_to :supplierinfo, foreign_key: :supplierinfo
+  belongs_to :supplierinfo
   has_many :images
 
   def discount

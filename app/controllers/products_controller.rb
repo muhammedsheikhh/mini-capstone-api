@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    pp current_user
     product = Product.all.order(:id)
     render json: product
   end
@@ -9,8 +10,10 @@ class ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
+      supplierinfo_id: params[:supplier_id],
     )
     if product.save
+      Image.create(url: params[:image_url], product_id: product.id)
       render json: product
     else
       render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
@@ -27,7 +30,9 @@ class ProductsController < ApplicationController
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
     product.description = params[:description] || product.description
+    product.supplierinfo = params[:supplier_id] || product.supplierinfo
     if product.save
+      Image.create(url: params[:image_url], product_id: product.id)
       render json: product
     else
       render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
