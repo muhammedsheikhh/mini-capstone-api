@@ -1,6 +1,7 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTcwMzZ9.iuhYMjbeJ97f15wIXBOL64Nwh6Hd50uD7NQCOh2JPEA
+
 ### product create
 POST http://localhost:3000/users
-
 Content-Type: application/json
 
 {
@@ -24,7 +25,7 @@ GET http://localhost:3000/products
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk4MDJ9.m-uK0wbKXR8AAD7ibJFz8sXc7Gf7VzT3HY60TwNijhA
 
 ### product show
-GET http://localhost:3000/products/1
+GET http://localhost:3000/orders
 
 ### product create
 POST http://localhost:3000/images
@@ -48,9 +49,26 @@ Content-Type: application/json
 Patch http://localhost:3000/products/2
 Content-Type: application/json
 
+### product create
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "product_id": 1,
+  "quantity": 1
+}
+
 ### product destroy
 delete http://localhost:3000/images/2
 Content-Type: application/json
+
+###
+get http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTcwMzZ9.iuhYMjbeJ97f15wIXBOL64Nwh6Hd50uD7NQCOh2JPEA
+
+
 
 
 
