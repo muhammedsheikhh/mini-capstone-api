@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ### product update
-Patch http://localhost:3000/products/2
+get http://localhost:3000/products
 Content-Type: application/json
 
 ### product create
