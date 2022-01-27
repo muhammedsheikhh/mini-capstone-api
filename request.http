@@ -5,8 +5,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "muhammed",
-  "email": "mo@test.com",
+  "name": "sheikh",
+  "email": "sk@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "mo@test.com",
+  "email": "ta@test.com",
   "password": "password"
 }
 
@@ -66,11 +66,25 @@ Content-Type: application/json
 ###
 get http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTcwMzZ9.iuhYMjbeJ97f15wIXBOL64Nwh6Hd50uD7NQCOh2JPEA
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
+eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDMyNTAyODR9.dcz3hij4wZQZQGHYFgBEytKdEQ71sklX06I-VK2oX2A
+eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMyNTAzNjR9.3dNCjsrWKOZN0NKRsKWbLrRs4SjnL51J7KFDI6PbPwI
+
+### cartedproduct create
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
 
 
 
+{
+ 
+  
+}
 
 
-
+### cartedproduct create
+GET http://localhost:3000/cartedproducts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
 

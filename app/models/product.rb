@@ -10,9 +10,10 @@ class Product < ApplicationRecord
   #end
   belongs_to :supplierinfo
   has_many :images
-  has_many :orders
   has_many :category_products
-  has_many :categories, through: :category_products 
+  has_many :categories, through: :category_products
+  has_many :carted_products
+  has_many :orders, through: :carted_products
 
   def discount
     if price.to_i < 55000
