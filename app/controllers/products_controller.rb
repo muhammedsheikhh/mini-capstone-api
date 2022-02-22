@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
     )
     if product.save
       Image.create(url: params[:image_url], product_id: product.id)
+      # CategoryProduct.create(product_id: product.id, category_id: params[:category_id])
       render json: product
     else
       render json: { errors: product.errors.full_messages }, status: :unprocessable_entity

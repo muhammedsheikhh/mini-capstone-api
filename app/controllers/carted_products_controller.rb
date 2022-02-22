@@ -1,7 +1,7 @@
 class CartedProductsController < ApplicationController
   def index
     #pp current_user
-    cartedproduct = current_user.carted_products
+    cartedproduct = current_user.carted_products.where(status: "carted")
     render json: cartedproduct
   end
 
@@ -17,5 +17,12 @@ class CartedProductsController < ApplicationController
     else
       render json: { errors: cartedproduct.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    cartedproduct = current_user.carted_products.find_by(id: params[:id])
+    cartedproduct.status = "removed"
+    cartedproduct.save
+    render json: { message: "Carted product destroyed successfully!" }
   end
 end

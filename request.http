@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTcwMzZ9.iuhYMjbeJ97f15wIXBOL64Nwh6Hd50uD7NQCOh2JPEA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDU1NzU3NDF9.43JiT8ODgz-tL-5XX03NNyCvqRC-5CuBVPuxzqiGWmA
 
 ### product create
 POST http://localhost:3000/users
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "ta@test.com",
+  "email": "sk@test.com",
   "password": "password"
 }
 
@@ -25,7 +25,7 @@ GET http://localhost:3000/products
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk4MDJ9.m-uK0wbKXR8AAD7ibJFz8sXc7Gf7VzT3HY60TwNijhA
 
 ### product show
-GET http://localhost:3000/orders
+GET http://localhost:3000/products
 
 ### product create
 POST http://localhost:3000/images
@@ -46,16 +46,18 @@ Content-Type: application/json
 }
 
 ### product update
-get http://localhost:3000/products
+delete http://localhost:3000/products/1
 Content-Type: application/json
 
+
+
 ### product create
-POST http://localhost:3000/orders
+POST http://localhost:3000/carted_products
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "product_id": 1,
+  "product_id": 3,
   "quantity": 1
 }
 
@@ -66,9 +68,8 @@ Content-Type: application/json
 ###
 get http://localhost:3000/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
-eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDMyNTAyODR9.dcz3hij4wZQZQGHYFgBEytKdEQ71sklX06I-VK2oX2A
-eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMyNTAzNjR9.3dNCjsrWKOZN0NKRsKWbLrRs4SjnL51J7KFDI6PbPwI
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDM2NjAzNDN9.Qx0dp-pHJth5pY9spVvnfPacvqqmeSBw-p6D48akN58
+
 
 ### cartedproduct create
 POST http://localhost:3000/orders
@@ -76,15 +77,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
 
 
-
-{
- 
-  
-}
-
-
 ### cartedproduct create
 GET http://localhost:3000/cartedproducts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDk3MDJ9.vPn0tYT5PkAMsh-AghSTSVWKiJRlj5xmptHcvFkfYqQ
-
+Authorization: Bearer {{jwt}}

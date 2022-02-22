@@ -1,3 +1,5 @@
+User.create!(name: muhammed, email: mo@test.com, password: password)
+
 Supplierinfo.create!(name: "mb", email: "ms@gmail.com", phone_number: 12345)
 
 Product.create!(supplierinfo_id: 1, name: "Mercedes-benz Class A", price: 42000, description: "brand new Merceded-benz Class A with navigation, led lights and panoramic roof")

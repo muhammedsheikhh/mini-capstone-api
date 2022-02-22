@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
-  get "/cartedproducts" => "carted_products#index"
-  post "/cartedproducts" => "carted_products#create"
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+  delete "/carted_products/:id" => "carted_products#destroy"
 
   get "/orders" => "orders#index"
   post "/orders" => "orders#create"
